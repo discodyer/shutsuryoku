@@ -80,7 +80,7 @@ wget https://repo.openeuler.org/openEuler-24.03-LTS/virtual_machine_img/riscv64/
 
 默认的`root`用户密码是`openEuler12#$`
 
-![alt text](images/1-2-oe-rv-fastfetch.png.png)
+![alt text](images/1-2-oe-rv-fastfetch.png)
 
 ## 参考文章
 
