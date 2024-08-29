@@ -9,7 +9,7 @@
 
 需要下载`root`和`boot`分区镜像，以及`uboot镜像`。根据你的板卡内存大小选择合适的镜像，8G选择`u-boot-with-spl-lpi4a.bin`，16G选择`u-boot-with-spl-lpi4a-16g.bin`
 
-烧写步骤就不赘述了，这边主要讲解如何在内测版硬件上使用tf卡启动。
+烧写步骤可以参考 [这篇文章](https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html) 和 [这篇文章](https://github.com/revyos/revyos/blob/main/Installation/licheepi4a.md)，这里就不赘述了，这边主要补充如何在内测版硬件上使用tf卡启动。
 
 首先，把boot分区按照正常的步骤烧写到emmc中，然后将root分区烧写到tf卡中。
 
@@ -53,7 +53,9 @@ saveenv
 sudo resize2fs /dev/mmcblk1
 ```
 
-由于oERV 24.03主线用的是 6.6 同源内核，所以没有HDMI驱动，因此需要使用ssh进行登录
+由于oERV 24.03主线用的是 6.6 内核，暂时没有HDMI驱动，因此需要使用ssh进行远程连接
+
+
 
 ## 参考文章
 
@@ -62,3 +64,9 @@ https://openeuler-ros-docs.readthedocs.io/en/latest/installation/lpi4a-rv-oe.htm
 https://bbs.eeworld.com.cn/thread-1258199-1-1.html
 
 https://docs.openeuler.org/en/docs/22.03_LTS_SP1/docs/desktop/installing-Xfce.html
+
+https://github.com/revyos/th1520-linux-kernel/commits/th1520-lts-wip/
+
+https://wiki.sipeed.com/hardware/zh/lichee/th1520/lpi4a/4_burn_image.html
+
+https://github.com/revyos/revyos/blob/main/Installation/licheepi4a.md
