@@ -13,6 +13,12 @@
 sudo apt install build-essential git libglib2.0-dev libfdt-dev libpixman-1-dev zlib1g-dev ninja-build libslirp-dev ninja-build wget tar xz-utils
 ```
 
+确保你的`/etc/apt/sources.list`里开启了deb-src源，然后用下面的命令自动安装依赖
+
+```bash
+sudo apt-get build-dep qemu
+```
+
 在 `/usr/local` 下创建目标文件夹
 
 ```bash
@@ -80,10 +86,22 @@ wget https://repo.openeuler.org/openEuler-24.03-LTS/virtual_machine_img/riscv64/
 
 默认的`root`用户密码是`openEuler12#$`
 
+[fastfetch 编译步骤](https://github.com/fastfetch-cli/fastfetch/wiki/Building)
+
 ![alt text](images/1-2-oe-rv-fastfetch.png)
+
+## 启动 xfce
+
+使用上面的镜像[无法启动xfce桌面](https://github.com/discodyer/shutsuryoku/issues/1)，请使用[这个镜像](https://mirror.iscas.ac.cn/openeuler-sig-riscv/openEuler-RISC-V/devel/20240829/v0.1/QEMU/)
+
+和上面一样，只需要下载里面的镜像和固件，然后再运行脚本就能启动xfce桌面环境了
+
+![alt text](images/1-2-oe2403-in-qemu-fastfetch.png)
 
 ## 参考文章
 
 https://docs.openeuler.org/en/docs/24.03_LTS/docs/Installation/RISC-V-QEMU.html
 
 https://www.openeuler.org/en/blog/phoebe/2023-09-26-Run-openEuler-RISC-V-On-Qemu.html
+
+https://github.com/fastfetch-cli/fastfetch/wiki/Building
