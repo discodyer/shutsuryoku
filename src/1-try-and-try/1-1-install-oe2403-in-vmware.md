@@ -28,9 +28,18 @@
 
 这个是openEuler的安装器主选单，可以选择你的安装位置，预装软件和用户名等设置。所有设置都选择完成后，可以点击右下角的`Begin Installation`开始安装。等待一段时间后，就可以点击`Reboot System`重启虚拟机了，会自动引导安装好的系统。
 
-## 系统基本操作
-
 开机后系统界面如下图所示，输入你创建的用户名和密码进入系统
 
 ![alt text](images/1-1-oe-login.png)
 
+系统信息：
+
+按照[这个教程](https://docs.openeuler.org/zh/docs/24.03_LTS/docs/desktop/Install_XFCE.html)安装xfce桌面环境，[fastfetch 编译步骤](https://github.com/fastfetch-cli/fastfetch/wiki/Building)
+
+![alt text](images/1-1-fastfetch.png)
+
+## 参考链接
+
+https://docs.openeuler.org/zh/docs/24.03_LTS/docs/desktop/Install_XFCE.html
+
+https://github.com/fastfetch-cli/fastfetch/wiki/Building
