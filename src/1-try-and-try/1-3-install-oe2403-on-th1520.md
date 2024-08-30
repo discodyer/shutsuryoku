@@ -53,9 +53,25 @@ saveenv
 sudo resize2fs /dev/mmcblk1
 ```
 
-由于oERV 24.03主线用的是 6.6 内核，暂时没有HDMI驱动，因此需要使用ssh进行远程连接
+由于oERV 24.03主线用的是 6.6 内核，[暂时没有HDMI驱动](https://github.com/revyos/revyos/issues/74)，因此需要使用ssh进行远程连接
 
+首先按照[这个教程](https://docs.openeuler.org/zh/docs/24.03_LTS/docs/desktop/Install_XFCE.html)安装xfce桌面环境，再按照[这个教程](/src/2-oe-ros2-test/2-1-install-ros2-on-oe2403.md)安装ROS2环境
 
+在`/etc/ssh/sshd_config`中修改`X11Forwarding`项为`yes`
+
+然后重启sshd
+
+```bash
+sudo systemctl restart sshd
+```
+
+就可以在你的电脑上使用下面的命令通过`x11forward`启动`Licheepi 4A`上的小海龟界面了，同理，其他需要显示界面的程序都可以这样显示
+
+```bash
+ssh -X openeuler@192.168.xx.xx "ros2 run turtlesim turtlesim_node"
+``` 
+
+![alt text](images/1-3-run-ros2-on-th1520.png)
 
 ## 参考文章
 
