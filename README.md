@@ -8,3 +8,4 @@
     - [在 LicheePi 4A 上运行 openEuler 24.03](src/1-try-and-try/1-3-install-oe2403-on-th1520.md)
 2. 测试 openEuler ROS2 Humble 相关功能：
     - [在 openEuler 24.03 上安装 ROS2 Humble](src/2-oe-ros2-test/2-1-install-ros2-on-oe2403.md)
+    - [ROS基础编程测试题目](src/2-oe-ros2-test/2-2-tests.md)

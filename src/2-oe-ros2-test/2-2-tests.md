@@ -1,13 +1,8 @@
 # ROS基础编程测试题目
 
-## test 01
+## [test 01](https://github.com/discodyer/shutsuryoku/tree/test01)
 
- - 启动小乌龟仿真界面
- - 新建功能包，编写第一个ros2节点实现话题发布功能，通过发布Twist消息让小乌龟跑一个长方形轨迹（基于odom信息反馈）
- - 编写第二个ros2节点实现服务调用功能：即将下列命令行实现的效果改为编程调用python服务实现  
-`ros2 service call /spawn turtlesim/srv/Spawn "{x: 2, y: 2, theta: 0.2, name: ''}"`
-
-## test 02
+<!-- ## test 02
 
  - 新建功能包，编写第一个ROS节点实现TF发布功能：发布/world_link到/base_link的静态TF（可自定义）以及/base_link到/camera_link的动态TF（可自定义）
  - 编写第二个ROS节点实现TF监听功能：监听/camera_link到/base_link的动态TF并在终端打印输出
@@ -29,6 +24,66 @@
  - 安装usb_cam或其他USB摄像头驱动包驱动笔记本电脑自带的摄像头
  - 新建功能包，编写节点实时订阅摄像头发布的图像话题消息并将ROS图像消息转换为OpenCV图像
  - 在图像右上角绘制矩形，再将OpenCV图像转换回ROS图像消息重新发布到一个新的话题
- - 用rviz或者rqt_image_view显示图像消息
+ - 用rviz或者rqt_image_view显示图像消息 -->
 
-代码放在 [这个仓库](https://github.com/discodyer/ros2playground) ，相关说明文档会放在这边
+代码放在本仓库的各个分支中
+
+## 操作步骤
+
+首先安装ros环境，按照这边的教程 [在 openEuler 24.03 上安装 ROS2 Humble](/src/2-oe-ros2-test/2-1-install-ros2-on-oe2403.md)
+
+确保你有 `colcon` 工具包，可以使用pip3安装
+
+```bash
+pip3 install -U pytest colcon-common-extensions
+```
+
+### 创建工作区
+
+```bash
+mkdir -p ~/ros2_ws/src/plct-test
+cd ~/ros2_ws/src/plct-test
+ros2 pkg create test01 --license MIT
+```
+
+然后会在 `src/plct-test` 下创建一个 `test01` 的包
+
+可以把 `plct-test` 目录创建为git仓库，管理你的项目
+
+首先，[在 GitHub 上创建一个存储库](https://docs.github.com/zh/repositories/creating-and-managing-repositories/creating-a-new-repository)/
+
+```bash
+# cd ~/ros2_ws/src/plct-test
+echo "# test01" >> README.md
+git init
+git checkout -q -b test01
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/your_account/your_repo.git
+git push --set-upstream origin test01
+```
+
+此时会创建一个`test01`分支并推送到远程仓库
+
+可以先构建一下包
+
+```bash
+cd ~/ros2_ws
+colcon build
+```
+
+然后会在顶层目录创建三个文件夹
+
+```text
+.
+├── build
+├── install
+├── log
+└── src
+```
+
+此时，执行 `source ~/ros2_ws/install/setup.bash` 设置环境，或者添加到`.bashrc`中
+
+```bash
+echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
+```
