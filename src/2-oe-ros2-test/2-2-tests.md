@@ -50,7 +50,7 @@ ros2 pkg create test01 --license MIT
 
 可以把 `plct-test` 目录创建为git仓库，管理你的项目
 
-首先，[在 GitHub 上创建一个存储库](https://docs.github.com/zh/repositories/creating-and-managing-repositories/creating-a-new-repository)/
+首先，[在 GitHub 上创建一个存储库](https://docs.github.com/zh/repositories/creating-and-managing-repositories/creating-a-new-repository)
 
 ```bash
 # cd ~/ros2_ws/src/plct-test
