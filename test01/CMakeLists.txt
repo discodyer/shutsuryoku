@@ -7,9 +7,22 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(turtlesim REQUIRED)
+find_package(nav_msgs REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
+
+# Add executable
+add_executable(rectangular_motion src/rectangular_motion.cpp)
+ament_target_dependencies(rectangular_motion rclcpp std_msgs geometry_msgs nav_msgs turtlesim)
+
+# Install the executable
+install(TARGETS
+  rectangular_motion
+  DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
