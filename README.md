@@ -112,6 +112,6 @@ install(
 
 ## 代码详解
 
-[第一个 ros2 C++ 节点](/src/rectangular_motion.cpp)通过发布Twist消息让小乌龟跑一个长方形轨迹，并通过订阅 `/turtle1/pose` 话题获取乌龟的当前位置和朝向信息，调整小乌龟的朝向和移动
+[第一个 ros2 C++ 节点](/test01/src/rectangular_motion.cpp)通过发布Twist消息让小乌龟跑一个长方形轨迹，并通过订阅 `/turtle1/pose` 话题获取乌龟的当前位置和朝向信息，调整小乌龟的朝向和移动
 
-[第二个python脚本](/scripts/turtle_spawner.py)通过调用 `/spawn` 服务生成新乌龟，并调用 `/teleport_absolute` 服务将乌龟传送到指定位置
+[第二个python脚本](/test01/scripts/turtle_spawner.py)通过调用 `/spawn` 服务生成新乌龟，并调用 `/teleport_absolute` 服务将乌龟传送到指定位置
