@@ -114,4 +114,27 @@ install(
 
 [第一个 ros2 C++ 节点](/test01/src/rectangular_motion.cpp)通过发布Twist消息让小乌龟跑一个长方形轨迹，并通过订阅 `/turtle1/pose` 话题获取乌龟的当前位置和朝向信息，调整小乌龟的朝向和移动
 
+```bash
+# 运行小乌龟节点
+ros2 run turtlesim turtlesim_node
+# 运行控制节点
+ros2 run test01 rectangular_motion
+```
+
+存在的问题：
+
+ - 现在小乌龟走的路线不够直，可能是和距离判定有关，没走到位置上就朝向下一个点了，所以走得会有点斜，后面可以修改成 PID 控制，并增加控制点
+ - 由于第一个点是朝向下一个点位的，所以实际上会先走到第二个点，最后才会走到第一个点
+
+![alt text](images/test01-rectangular_motion.png)
+
 [第二个python脚本](/test01/scripts/turtle_spawner.py)通过调用 `/spawn` 服务生成新乌龟，并调用 `/teleport_absolute` 服务将乌龟传送到指定位置
+
+```bash
+# 运行小乌龟节点
+ros2 run turtlesim turtlesim_node
+# 运行生成节点
+ros2 run test01 turtle_spawner.py
+```
+
+![alt text](images/test01-turtle_spawner.png)
