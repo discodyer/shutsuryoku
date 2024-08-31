@@ -8,6 +8,7 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(rclpy REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(turtlesim REQUIRED)
 find_package(nav_msgs REQUIRED)
@@ -23,6 +24,12 @@ ament_target_dependencies(rectangular_motion rclcpp std_msgs geometry_msgs nav_m
 install(TARGETS
   rectangular_motion
   DESTINATION lib/${PROJECT_NAME})
+
+install(
+  PROGRAMS
+  scripts/turtle_spawner.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
