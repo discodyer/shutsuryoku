@@ -43,10 +43,11 @@ pip3 install -U pytest colcon-common-extensions
 ```bash
 mkdir -p ~/ros2_ws/src/plct-test
 cd ~/ros2_ws/src/plct-test
+# 创建一个包，名称为 test01 ，采用MIT协议开源
 ros2 pkg create test01 --license MIT
 ```
 
-然后会在 `src/plct-test` 下创建一个 `test01` 的包
+然后会在 `src/plct-test` 下创建一个名为 `test01` 的包
 
 可以把 `plct-test` 目录创建为git仓库，管理你的项目
 
@@ -56,16 +57,18 @@ ros2 pkg create test01 --license MIT
 # cd ~/ros2_ws/src/plct-test
 echo "# test01" >> README.md
 git init
+# 创建并切换到一个名为test01的分支
 git checkout -q -b test01
 git add .
 git commit -m "first commit"
+# 修改为你的仓库地址
 git remote add origin https://github.com/your_account/your_repo.git
 git push --set-upstream origin test01
 ```
 
-此时会创建一个`test01`分支并推送到远程仓库
+上面的命令会初始化Git仓库，创建一个`test01`分支并推送到远程仓库
 
-可以先构建一下包
+可以先用`colcon build`初始化一下工作区
 
 ```bash
 cd ~/ros2_ws
