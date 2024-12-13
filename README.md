@@ -9,3 +9,8 @@
 2. 测试 openEuler ROS2 Humble 相关功能：
     - [在 openEuler 24.03 上安装 ROS2 Humble](src/2-oe-ros2-test/2-1-install-ros2-on-oe2403.md)
     - [ROS基础编程测试题目](src/2-oe-ros2-test/2-2-tests.md)
+
+## 研究报告
+
+ - [Point-Lio 算法在K1开发板上的RVV1.0自动向量化加速尝试](src/6-report/6-1-point-lio.md)
+ - [测试mqtt-client](src/6-report/6-2-test-mqtt-client.md)
